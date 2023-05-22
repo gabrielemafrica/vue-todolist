@@ -28,8 +28,9 @@
 
         <div class="task-container">
             <ul>
-                <li class="task" v-for="task in tasks">
+                <li class="task" v-for="(task, index) in tasks">
                     {{ task.text }}
+                    <i class="fas fa-times" @click="deleteTask(index)"></i>  
                 </li>
             </ul>
         </div>

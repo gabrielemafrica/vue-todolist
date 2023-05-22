@@ -39,8 +39,10 @@ createApp({
                 const objTask = {text: this.newText, done: false};
                 this.tasks.unshift(objTask);
                 this.newText = '';
-            }
-            
+            }   
+        },
+        deleteTask(index){
+            this.tasks.splice(index, 1);
         }
 
     }
