@@ -17,6 +17,10 @@
             <button @click="addTask">aggiungi</button>
         </div>
 
+        <div class="error" v-if="error">
+            <h2>ERROR</h2>
+        </div>
+
 
         <div class="task-container">
             <ul>
