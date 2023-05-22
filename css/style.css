@@ -13,6 +13,9 @@ body{
 h1{
     color: lightblue;
 }
+h4{
+    color: darkred;
+}
 
 /* app */
 #app{
