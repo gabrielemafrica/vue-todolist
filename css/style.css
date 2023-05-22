@@ -65,10 +65,22 @@ li{
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 15px 5px;
     border-bottom: 1px solid #eee;
+
+}
+
+.item-txt{
+    cursor: pointer;
 }
 i{
     cursor: pointer;
+}
+
+li:hover{
+    background-color: #eee;
+}
+
+.through{
+    text-decoration: line-through;
 }

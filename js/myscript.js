@@ -8,26 +8,27 @@ createApp({
 
             tasks: [
                 {
-                    text: 'esempio 1',
-                    sone: false
+                    text: 'campra i pomodori',
+                    done: false
                 },
                 {
-                    text: 'esempio 2',
-                    sone: false
+                    text: 'fai paracadutismo',
+                    done: false
                 },
                 {
-                    text: 'esempio 3',
-                    sone: true
+                    text: 'combatti contro King Kong',
+                    done: true
                 },
                 {
-                    text: 'esempio 4',
-                    sone: true
+                    text: 'scala una giraffa',
+                    done: true
                 }
             ]
 
         }
     },
     methods: {
+        //aggiungo elemento
         addTask(){
                 // controllo errore
             if (this.newText === '' || this.newText.length < 5) {
@@ -41,8 +42,13 @@ createApp({
                 this.newText = '';
             }   
         },
+        //cancella elemento
         deleteTask(index){
             this.tasks.splice(index, 1);
+        },
+        //inverti done
+        modifierDone(index){
+            this.tasks[index].done =!this.tasks[index].done;
         }
 
     }

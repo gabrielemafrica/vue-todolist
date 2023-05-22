@@ -29,7 +29,7 @@
         <div class="task-container">
             <ul>
                 <li class="task" v-for="(task, index) in tasks">
-                    {{ task.text }}
+                    <span :class="task.done ? ' item-txt through' : 'item-txt'" @click="modifierDone(index)">{{ task.text }}</span>
                     <i class="fas fa-times" @click="deleteTask(index)"></i>  
                 </li>
             </ul>
