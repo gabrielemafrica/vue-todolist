@@ -32,7 +32,19 @@ createApp({
     },
     methods: {
         addTask(){
-            console.log(this.newTask.text);
+            
+            console.log(this.newTask);
+            this.tasks.unshift(this.newTask);
+            this.newTask.text = '';
+            // if (this.newTask.text !== '') {
+            //     this.tasks.unshift(this.newTask);
+            //     console.log(this.newTask.text);
+            //     this.newTask.text = '';
+            //     this.error = false;
+            // } else {
+            //     this.error = true;
+            // }
+            
         }
 
     }
