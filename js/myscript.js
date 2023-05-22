@@ -5,10 +5,7 @@ createApp({
             message: 'Hello Vue!',
             error: false,
             newText: '',
-            newTask: {
-                text: '',
-                done: false
-            },
+
             tasks: [
                 {
                     text: 'esempio 1',
@@ -32,18 +29,17 @@ createApp({
     },
     methods: {
         addTask(){
-            
-            console.log(this.newTask);
-            this.tasks.unshift(this.newTask);
-            this.newTask.text = '';
-            // if (this.newTask.text !== '') {
-            //     this.tasks.unshift(this.newTask);
-            //     console.log(this.newTask.text);
-            //     this.newTask.text = '';
-            //     this.error = false;
-            // } else {
-            //     this.error = true;
-            // }
+                // controllo errore
+            if (this.newText === '' || this.newText.length < 5) {
+                this.error = true;
+                this.newText = '';
+            }else{
+                // creo oggetto e push
+                this.error = false;
+                const objTask = {text: this.newText, done: false};
+                this.tasks.unshift(objTask);
+                this.newText = '';
+            }
             
         }
 

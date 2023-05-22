@@ -13,19 +13,23 @@
         <h1>todo List</h1>
 
         <div class="new-task">
-            <input type="text" v-model="newTask.text" @keyup.enter="addTask" placeholder="scivi qui"/>
+            <input type="text" v-model="newText" @keyup.enter="addTask" placeholder="scivi qui"/>
             <button @click="addTask">aggiungi</button>
         </div>
 
         <div class="error" v-if="error">
-            <h2>ERROR</h2>
+            <h2>
+                ERROR
+                <br>
+                digita almeno 5 caratteri
+            </h2>
         </div>
 
 
         <div class="task-container">
             <ul>
                 <li class="task" v-for="task in tasks">
-                    {{ task }}
+                    {{ task.text }}
                 </li>
             </ul>
         </div>
