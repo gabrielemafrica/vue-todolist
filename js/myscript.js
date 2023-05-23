@@ -4,6 +4,7 @@ createApp({
         return {
             message: 'Hello Vue!',
             error: false,
+            noTask: false,
             newText: '',
 
             tasks: [
@@ -33,18 +34,24 @@ createApp({
                 // controllo errore
             if (this.newText === '' || this.newText.length < 5) {
                 this.error = true;
-                this.newText = '';
             }else{
                 // creo oggetto e push
                 this.error = false;
                 const objTask = {text: this.newText, done: false};
                 this.tasks.unshift(objTask);
-                this.newText = '';
-            }   
+            } 
+            this.newText = '';
+            //scritta noTask spenta
+            this.noTask = false; 
         },
+        
         //cancella elemento
         deleteTask(index){
             this.tasks.splice(index, 1);
+            //scritta noTask
+            if (this.tasks.length === 0) {
+                this.noTask = true; 
+            }
         },
         //inverti done
         modifierDone(index){

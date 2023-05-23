@@ -9,7 +9,10 @@
     <title>Todo List</title>
 </head>
 <body>
+    <!-- container connessione -->
     <div id="app">
+
+        <!-- title e imput -->
         <h1>todo List</h1>
 
         <div class="new-task">
@@ -17,6 +20,7 @@
             <button @click="addTask">aggiungi</button>
         </div>
 
+        <!-- error and no task -->
         <div class="error" v-if="error">
             <h4>
                 ERROR!
@@ -25,7 +29,13 @@
             </h4>
         </div>
 
+        <div class="noTask" v-if="noTask">
+            <h5>
+                Non ci sono Task.
+            </h5>
+        </div>
 
+        <!-- List Task -->
         <div class="task-container">
             <ul>
                 <li class="task" v-for="(task, index) in tasks">
@@ -37,6 +47,7 @@
 
     </div>
 
+    <!-- connessioni -->
     <script src="https://unpkg.com/vue@3"></script>
     <script type="text/javascript" src="js/myscript.js"></script>
 </body>
